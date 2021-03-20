@@ -2,7 +2,7 @@
 
 // taken from: https://clue.engineering/2021/fibers-in-php
 // how to run:
-// docker-compose run php-srv php /var/www/html/src/02-clue-example/clue-example.php
+// docker-compose run php-srv php /var/www/html/src/01-simple/clue-example.php
 
 require __DIR__ . "/../../vendor/autoload.php";
 
