@@ -1,4 +1,8 @@
-Examples for using ext-fibers ([https://github.com/amphp/ext-fiber](https://github.com/amphp/ext-fiber)).
+# ext-fibers Examples
+
+Examples for using ext-fibers ([https://github.com/amphp/ext-fiber](https://github.com/amphp/ext-fiber)) in PHP 8.
+
+You need docker and docker-compose to run the examples (more info about docker: [https://docs.docker.com](https://docs.docker.com)).
 
 Initially run:
 ```shell
