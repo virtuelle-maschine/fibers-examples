@@ -1,0 +1,7 @@
+version: '3'
+services:
+  php-srv:
+    build: .
+    volumes:
+      - .:/var/www/html
+    restart: "no"
