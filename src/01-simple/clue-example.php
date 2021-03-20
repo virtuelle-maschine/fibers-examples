@@ -24,13 +24,13 @@ function fetch(string $url): ResponseDummy
 
 class UserRepository
 {
-    private static string $base1 = 'http://example.com/user/';
-    private static string $base2 = 'http://api.example.org/user/';
+    private $base1 = 'http://example.com/user/';
+    private $base2 = 'http://api.example.org/user/';
 
-    public static function checkUser(int $id): bool
+    public function checkUser(int $id): bool
     {
-        $promise1 = async(fn() => fetch(self::$base1 . $id));
-        $promise2 = async(fn() => fetch(self::$base2 . $id));
+        $promise1 = async(fn() => fetch($this->base1 . $id));
+        $promise2 = async(fn() => fetch($this->base2 . $id));
 
         $responses = await([$promise1, $promise2]);
 
@@ -41,8 +41,9 @@ class UserRepository
 $time = microtime(true);
 printf("Starting (%01.4f secs)\n", microtime(true) - $time);
 
-if (UserRepository::checkUser(42)) {
-    echo "User exists!\n";
+$ok = (new UserRepository())->checkUser(42);
+if ($ok) {
+    echo "\nUser exists!\n\n";
 }
 
 printf("Done (%01.4f secs)\n", microtime(true) - $time);
